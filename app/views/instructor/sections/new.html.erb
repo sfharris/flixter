@@ -4,8 +4,8 @@
   <%= simple_form_for @section, url: instructor_course_sections_path(@course) do |f| %>
     <%= f.input :title %>
     <%= f.input :image %>
-      <% if @current_course.image.url.present? %>
-            <%= image_tag @current_course.image_s, class: 'img-fluid' %> 
+      <% if @current_course.image.to_s.present? %>
+            <%= image_tag @current_course.image.to_s, class: 'img-fluid' %> 
           <% end %>
     <br />
     <%= f.submit "Add a section", class: 'btn btn-primary' %>

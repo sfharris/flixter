@@ -12,8 +12,8 @@
     <br />
     <div class="row">
       <div class="col-sm-8 col-12">
-        <% if @course.image_s.present? %>
-            <%= image_tag @course.image_s, class: 'img-fluid' %> 
+        <% if course.image.to_s.present? %>
+            <%= image_tag course.image.to_s, class: 'img-fluid' %> 
           <% end %>
         <%= course.description %>
       </div>
