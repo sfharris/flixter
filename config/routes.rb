@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :models
   devise_for :users
   root 'static_pages#index'
   resources :courses, only: [:index, :show] do
@@ -14,4 +13,4 @@ Rails.application.routes.draw do
       resources :sections, only: [:new, :create]
     end
   end
-end 
+end

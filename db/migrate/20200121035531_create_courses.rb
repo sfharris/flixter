@@ -9,4 +9,4 @@ class CreateCourses < ActiveRecord::Migration[5.0]
     end
     add_index :courses, :user_id
   end
-ends
+end
