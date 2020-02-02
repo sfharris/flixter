@@ -73,6 +73,7 @@ gem "carrierwave-aws"
 gem "mini_magick"
 gem 'devise'
 gem 'stripe'
+gem 'ranked-model'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
