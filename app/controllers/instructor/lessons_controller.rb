@@ -1,15 +1,9 @@
 class Instructor::LessonsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_authorized_for_current_section, only: [:new, :create]
+  before_action :require_authorized_for_current_section, only: [:create]
   before_action :require_authorized_for_current_lesson, only: [:update]
   
-  def new
-    @section = Section.find(params[:section_id])
-    if @section.course.user != current_user
-      return render plain: 'Unauthorized', status: :unauthorized
-    end
-    @lesson = Lesson.new
-  end
+
 
   def create
     @section = Section.find(params[:section_id])
