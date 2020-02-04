@@ -52,9 +52,7 @@
   <%= link_to 'Preview As Student...', course_path(@current_course), class: 'btn btn-warning float-right' %>
   <br class="clr" />
 
-    <ul>
-    <% current_course.sections.each do |section| %>
-      <li>
+    
 
 
   <div class="text-center">
@@ -71,7 +69,9 @@
       <span class="fa fa-ellipsis-v"></span>
       <%= section.title %>
     </div>
-    <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
+    <button type="button" class="btn btn-primary btn-sm float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
+       Add a new lesson
+        </button>
       <br class="clr" />
       <br class="clr" />
     <ul class="lessons">
@@ -128,6 +128,4 @@
       <% end %>
     </div>
   </div>
-</div>
-<% end %>
 </div>
